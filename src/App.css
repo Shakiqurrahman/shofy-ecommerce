@@ -1,0 +1,30 @@
+/* Google Fonts  */
+@import url('https://fonts.googleapis.com/css2?family=Oregano&family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+  text-decoration: none;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  list-style: none;
+  scroll-behavior: smooth;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f2ee;
+}
+
+a, button{
+    cursor:pointer;
+    color: black;
+}
+
+.active{
+  color: #0989ff;
+}
+
+section{
+  margin-bottom: 40px;
+}

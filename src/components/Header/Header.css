@@ -1,0 +1,110 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items:center ;
+    padding:1.5rem 4rem;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 20px;
+
+}
+
+.navbar .nav-links {
+    display: flex;
+}
+
+.navbar .nav-links li{
+    margin-right: 40px ;
+    font-size: 18px;
+    font-weight: 500;
+    
+}
+
+.navbar .nav-links li a{
+    transition: 0.5s;
+}
+
+.navbar .nav-links li :hover {
+    color: #0989ff;
+}
+
+.cart-icon{
+    display: flex;
+    align-items: center;
+}
+
+.cart-icon .link{
+    font-size: 27px;
+    margin-right: 5px;
+    transition: .3s ;
+    color: black;
+}
+
+.cart-icon .link:hover{
+    color: #0989ff;
+}
+
+.cart-icon .buy-now-btn {
+    background-color: transparent;
+    border: none;
+    border: 2px solid rgba(1, 15, 28, 0.1);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 30px;
+    transition: 0.5s;
+
+}
+
+.cart-icon .buy-now-btn:hover {
+    border-color: #0989ff;
+}
+
+.hamburger-menu{
+    display: none;
+    margin-left: 10px;
+    font-size: 25px;
+    width: 25px;
+    transition: .3s ease-in-out;
+}
+
+
+
+
+/* Carousel bgc #115061 */
+
+
+
+
+
+@media screen and (max-width:600px){
+    .cart-icon .buy-now-btn {
+        display: none;
+    }
+
+    .header{
+        padding: 1rem;
+    }
+    .hamburger-menu {
+        display: block;
+    }
+    .nav-links {
+        top: 72px;
+        position: absolute;
+        left: -500px; 
+     }
+    .mobile-nav {
+        display: block;
+        flex-direction: column;
+        align-items: center;
+        top: 72px;
+        left: 0;
+        padding: 1rem;
+        background-color: #f0f2ee;
+        width: 100%;
+        transition: .3s ease-in-out;
+        z-index: 10000;
+    }
+
+    
+    
+}

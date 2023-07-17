@@ -1,0 +1,41 @@
+.box .img-box{
+    width: 220px;
+    height: 220px;
+    background-color: #8acad157;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+.box .img-box:hover img{
+    transform: scale(1.2);
+}
+
+.box .img-box img {
+    width: 45%;
+    transition: .3s ease-in-out;
+}
+
+.box .details{
+    text-align: center;
+}
+
+.details .details-title{
+    font-size: 22px;
+    font-weight: 500;
+    margin-top: 15px;
+}
+
+
+@media  screen and (max-width:669px) {
+    .box .img-box{
+        width: 180px;
+        height: 180px;
+    }
+    .box .details{
+        margin-bottom: 30px;
+    }
+   
+}
