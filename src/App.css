@@ -13,7 +13,7 @@
 
 body{
     font-family: 'Poppins', sans-serif;
-    background-color: #f0f2ee;
+    background-color: white;
 }
 
 a, button{
@@ -25,6 +25,15 @@ a, button{
   color: #0989ff;
 }
 
-section{
+.container{
+  padding: 0 9rem;
   margin-bottom: 40px;
+
+}
+
+@media  screen and (max-width:669px) {
+  .container{
+    padding: 0 15px;
+
+  }
 }
