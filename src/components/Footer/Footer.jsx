@@ -20,18 +20,26 @@ const Footer = () => {
               Website - Ancor Point
             </p>
             <div className="icon">
-              <li>
-                <RiFacebookFill />
-              </li>
-              <li>
-                <AiOutlineInstagram />
-              </li>
-              <li>
-                <ImLinkedin2 />
-              </li>
-              <li>
-                <BsYoutube />
-              </li>
+              <Link target="_blank" to="https://www.facebook.com/shakqur.rahmankayum">
+                <li>
+                  <RiFacebookFill />
+                </li>
+              </Link>
+              <Link target="_blank" to="https://www.instagram.com/retro_phile__/">
+                <li>
+                  <AiOutlineInstagram />
+                </li>
+              </Link>
+              <Link target="_blank" to="https://www.linkedin.com/in/shakiqurrahman/">
+                <li>
+                  <ImLinkedin2 />
+                </li>
+              </Link>
+              <Link target="_blank" to="https://youtube.com/@AncorPoint">
+                <li>
+                  <BsYoutube />
+                </li>
+              </Link>
             </div>
           </div>
         </div>
@@ -63,6 +71,8 @@ const Footer = () => {
           </ul>
         </div>
       </div>
+      <hr />
+      <p className="copyright">© 2023 All Rights Reserved | HTML Template by <Link target='_blank' to='https://shakiqur-rahman.netlify.app/#'>Shakiqur Rahman</Link>.</p>
     </footer>
   );
 };
