@@ -2,8 +2,14 @@
     display: flex;
     justify-content: space-between;
     align-items:center ;
-    padding:1.5rem 4rem;
+    padding:1.3rem 4rem;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 20px;
+    position: sticky;
+    left: 0;
+    right: 0;
+    top: 0;
+    background-color: #fff;
+    z-index: 10000;
 }
 
 .navbar .nav-links {
