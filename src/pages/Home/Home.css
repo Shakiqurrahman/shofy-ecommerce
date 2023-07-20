@@ -81,6 +81,8 @@
   z-index: 1;
 }
 
+/* product type  */
+
 .product-type {
   display: grid;
   grid-template-columns: repeat(4, 220px);

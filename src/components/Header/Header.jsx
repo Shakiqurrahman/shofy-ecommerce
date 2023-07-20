@@ -29,7 +29,7 @@ const Header = () => {
               <NavLink onClick={handleClose} to="/">HOME</NavLink>
             </li>
             <li>
-              <NavLink onClick={handleClose} to="/shop">SHOP</NavLink>
+              <NavLink onClick={handleClose} to="/product">PRODUCT</NavLink>
             </li>
             <li>
               <NavLink onClick={handleClose} to="/about">ABOUT US</NavLink>

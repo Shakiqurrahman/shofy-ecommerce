@@ -21,7 +21,7 @@ const Home = () => {
               Exclusive offer <span className="discount">-10%</span> off this
               week
             </p>
-            <Link to="/shop">
+            <Link to="/product">
               <button className="shop-now-btn">
                 Shop Now <BsArrowRight className="arrow-icon" />
               </button>
