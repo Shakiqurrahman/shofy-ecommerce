@@ -1,31 +1,35 @@
-import React from "react";
+import React, { useContext } from "react";
 import { AiOutlineHeart } from "react-icons/ai";
 import { BsEye } from "react-icons/bs";
 import { FiShoppingCart } from "react-icons/fi";
 import "./FeatureProducts.css";
+import ProductDetails from "../ProductDetails.jsx/ProductDetails";
+import { ShopContext } from "../../contexts/shop-context";
 
 const FeatureProducts = () => {
   const featureData = [
     {
       id: 1,
-      productTitle: "Galaxy Tab S6 Lite 10.4-inch Android Tablet 128GB.",
+      productTitle:
+        'Xiaomi Pad 5 Snapdragon 860 6GB RAM 256GB ROM 11" WQHD+ Global Version',
       productType: "Tablet",
-      productImg: "./images/tp1.jpg",
-      productPrice: 723,
+      productPrice: 435,
+      productImg: "./images/tablet4.jpg",
     },
     {
       id: 2,
-      productTitle: "Tracker with IP67 Waterproof Smart Watch.",
+      productTitle: "Xiaomi IMILAB W01 Fitness Smart Watch",
       productType: "Smart Watch",
-      productImg: "./images/tp2.jpg",
-      productPrice: 168,
+      productPrice: 80,
+      productImg: "./images/smart-watch3.jpg",
     },
     {
       id: 3,
-      productTitle: "Noise Cancelling Wireless Headphone.",
-      productType: "Headphone",
-      productImg: "./images/tp3.jpg",
-      productPrice: 49,
+      productTitle:
+        'Xiaomi Pad 5 Snapdragon 860 6GB RAM 256GB ROM 11" WQHD+ Global Version',
+      productType: "Mobile Phone",
+      productPrice: 435,
+      productImg: "./images/oneplus 10t.jpg",
     },
     {
       id: 4,
@@ -63,8 +67,14 @@ const FeatureProducts = () => {
       productPrice: 90,
     },
   ];
+
+  const {view, close} = useContext(ShopContext)
   return (
     <>
+    { close ?
+      <ProductDetails />
+      : ""
+    }
       {featureData.map((product) => (
         <div className="product-card" key={product.id}>
           <div className="img-box">
@@ -73,7 +83,7 @@ const FeatureProducts = () => {
               <li>
                 <FiShoppingCart />
               </li>
-              <li>
+              <li onClick={() => view(product)}>
                 <BsEye />
               </li>
               <li>
@@ -84,7 +94,9 @@ const FeatureProducts = () => {
           <div className="details">
             <p>{product.productType}</p>
             <h3 className="product-title">{product.productTitle}</h3>
-            <h3 className="product-price">${product.productPrice.toFixed(2)}</h3>
+            <h3 className="product-price">
+              ${product.productPrice.toFixed(2)}
+            </h3>
           </div>
         </div>
       ))}

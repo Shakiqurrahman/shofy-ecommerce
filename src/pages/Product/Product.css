@@ -49,6 +49,8 @@
     cursor: pointer;
 }
 
+
+
 @media screen and (max-width: 669px) {
     .products{
         padding: 15px;

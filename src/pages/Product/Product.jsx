@@ -1,34 +1,47 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import { AiOutlineHeart } from "react-icons/ai";
 import { BsEye } from "react-icons/bs";
 import { FiShoppingCart } from "react-icons/fi";
-import ProductsData from "../../data/productsData";
+import { Link } from "react-router-dom";
+import { ShopContext } from "../../contexts/shop-context";
 import "./Product.css";
+import ProductDetails from "../../components/ProductDetails.jsx/ProductDetails";
 
 const Shop = () => {
-  const [product, setProduct] = useState(ProductsData);
+  const { products, setProducts, ProductsData, view, close} = useContext(ShopContext);
+
 
   const filterProduct = (product) => {
     const update = ProductsData.filter((data) => {
       return data.productType === product;
     });
-    setProduct(update);
+    setProducts(update);
   };
 
   const allProducts = () => {
-    setProduct(ProductsData);
+    setProducts(ProductsData);
   };
   return (
     <>
+    { close ?
+      <ProductDetails />
+      : ""
+    }
+      
       <div className="products">
         <h2># Products</h2>
-        <p>Home . Products</p>
+        <p>
+          <Link to="/">Home </Link>. Products
+        </p>
         <div className="products-section">
           <div className="filter">
             <div className="categories">
               <h3>Categories</h3>
               <ul>
                 <li onClick={() => allProducts()}>All Products</li>
+                <li onClick={() => filterProduct("Mobile Phone")}>
+                  Mobile Phone
+                </li>
                 <li onClick={() => filterProduct("Tablet")}>Tablet</li>
                 <li onClick={() => filterProduct("Smart Watch")}>
                   Smart Watch
@@ -40,7 +53,7 @@ const Shop = () => {
             </div>
           </div>
           <div className="product-box">
-            {product.map((product) => (
+            {products.map((product) => (
               <div className="product-card" key={product.id}>
                 <div className="img-box">
                   <img src={product.productImg} alt={product.productTitle} />
@@ -48,7 +61,7 @@ const Shop = () => {
                     <li>
                       <FiShoppingCart />
                     </li>
-                    <li>
+                    <li onClick={() => view(product)}>
                       <BsEye />
                     </li>
                     <li>

@@ -1,0 +1,96 @@
+.product-detail{
+    margin-top: 30px;
+    padding: 30px 40px;
+    width: 100%;
+    height: 120%;
+    position: fixed;
+    z-index: 10000;
+    margin-top: -12%;
+    background: rgba(0, 0, 0, 0.24);
+  }
+  
+  .product-detail .detail-container{
+    margin-top: 10%;
+    margin-left: 10%;
+    width: 80%;
+    height: 80vh;
+    background: #fff;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+  
+  .product-detail .detail-container .close-btn{
+    margin-left: 98%;
+    font-size: 30px;
+    border: none;
+    background: none;
+  }
+  
+  
+  .product-detail .detail-container .productbox{
+    max-width: 100%;
+    display: flex;
+    padding: 20px 30px;
+    margin-top: 20px;
+    justify-content: space-between;
+  }
+  
+  .product-detail .detail-container .productbox .img-box{
+    padding: 20px 30px;
+    width: 400px;
+    height: 350px;
+    background: #f1f1f1;
+  }
+  
+  .product-detail .detail-container .productbox .img-box img {
+    width: 250px;
+    height: 250px;
+  
+  }
+  
+  .product-detail .detail-container .productbox .detail{
+    margin-left: 30px;
+    margin-top: 10px;
+  }
+  
+  .product-detail .detail-container .productbox .detail h4 {
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 200;
+    color: #9a9a9a;
+    letter-spacing: 1px;
+  }
+  
+  .product-detail .detail-container .productbox .detail h2{
+    margin-top: 20px;
+    font-size: 30px;
+    color: #010f1c;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+  }
+  
+  .product-detail .detail-container .productbox .detail p{
+    margin-top: 10px;
+    color: #4a4a4a;
+  }
+  
+  .product-detail .detail-container .productbox .detail h3{
+    margin-top: 10px;
+    color: #0989ff;
+    letter-spacing: 1px;
+    font-size: 32px;
+  }
+  
+  .product-detail .detail-container .productbox .detail button {
+    margin-top: 30px;
+    padding: 15px 50px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #010f1c;
+    border: none;
+    transition: .5s;
+  }
+  .product-detail .detail-container .productbox .detail button:hover {
+    background-color: #0989ff;
+  }
