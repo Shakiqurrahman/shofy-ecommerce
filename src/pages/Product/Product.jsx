@@ -8,7 +8,7 @@ import "./Product.css";
 import ProductDetails from "../../components/ProductDetails.jsx/ProductDetails";
 
 const Shop = () => {
-  const { products, setProducts, ProductsData, view, close} = useContext(ShopContext);
+  const { products, setProducts, ProductsData, view, close, addToCart} = useContext(ShopContext);
 
 
   const filterProduct = (product) => {
@@ -58,7 +58,7 @@ const Shop = () => {
                 <div className="img-box">
                   <img src={product.productImg} alt={product.productTitle} />
                   <div className="card-icon">
-                    <li>
+                    <li onClick={() => addToCart(product)}>
                       <FiShoppingCart />
                     </li>
                     <li onClick={() => view(product)}>

@@ -25,6 +25,12 @@
     font-size: 30px;
     border: none;
     background: none;
+    cursor: pointer;
+    transition: .3s;
+  }
+
+  .product-detail .detail-container .close-btn:hover{
+    color: rgb(209, 18, 18);
   }
   
   

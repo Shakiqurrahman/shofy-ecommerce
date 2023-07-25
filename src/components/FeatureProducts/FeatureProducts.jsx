@@ -68,7 +68,7 @@ const FeatureProducts = () => {
     },
   ];
 
-  const {view, close} = useContext(ShopContext)
+  const {view, close, addToCart} = useContext(ShopContext)
   return (
     <>
     { close ?
@@ -80,7 +80,7 @@ const FeatureProducts = () => {
           <div className="img-box">
             <img src={product.productImg} alt={product.productTitle} />
             <div className="card-icon">
-              <li>
+              <li  onClick={() => addToCart(product)}>
                 <FiShoppingCart />
               </li>
               <li onClick={() => view(product)}>

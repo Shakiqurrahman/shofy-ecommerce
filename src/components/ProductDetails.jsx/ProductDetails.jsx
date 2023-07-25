@@ -4,13 +4,12 @@ import { AiOutlineCloseCircle } from "react-icons/ai";
 import './ProductDetails.css'
 const ProductDetails = () => {
 
-    const {detail, setClose } = useContext(ShopContext);
+    const {detail, setClose, addToCart } = useContext(ShopContext);
   return (
     <>
       <div className="product-detail">
         <div className="detail-container">
           <button onClick={() => setClose(false)} className="close-btn">
-            {" "}
             <AiOutlineCloseCircle />
           </button>
           {detail.map((curElm, idx) => (
@@ -27,7 +26,7 @@ const ProductDetails = () => {
                   provident? Commodi.
                 </p>
                 <h3>${curElm.productPrice}</h3>
-                <button>Add To Cart</button>
+                <button  onClick={() => addToCart(curElm)}>Add To Cart</button>
               </div>
             </div>
           ))}
