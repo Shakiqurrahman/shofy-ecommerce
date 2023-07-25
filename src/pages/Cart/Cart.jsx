@@ -60,9 +60,10 @@ const Cart = () => {
     <section className="cart-container">
       {cart.length === 0 && (
         <div className="empty-cart">
+          <img src="/images/empty.png" alt="" />
           <h2>Cart is Empty!</h2>
           <Link className="empty-btn" to="/product">
-            Shop Now
+            Continue Shopping
           </Link>
         </div>
       )}
