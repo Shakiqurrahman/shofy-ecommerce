@@ -36,6 +36,22 @@
     align-items: center;
 }
 
+.cart-icon .cart-qty{
+    background-color: #0989ff;
+    width: 23px;
+    height: 23px;
+    line-height: 22px;
+    text-align: center;
+    border-radius: 50%;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    position: relative;
+    top: -15px;
+    left: -15px;
+    border: 2px solid white;
+}
+
 .cart-icon .link{
     font-size: 27px;
     margin-right: 5px;

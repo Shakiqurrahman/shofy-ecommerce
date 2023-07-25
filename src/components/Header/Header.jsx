@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { AiOutlineHeart } from "react-icons/ai";
 import { FiShoppingCart } from "react-icons/fi";
 import { GiHamburgerMenu } from "react-icons/gi";
@@ -6,8 +6,10 @@ import { GrClose } from "react-icons/gr";
 import { Link, NavLink } from "react-router-dom";
 import "./Header.css";
 import logo from "/logo.svg";
+import { ShopContext } from "../../contexts/shop-context";
 
 const Header = () => {
+  const {cart} = useContext(ShopContext);
   const [toggle, setToggle] = useState(false);
 
   const handleClose = () => {
@@ -47,6 +49,7 @@ const Header = () => {
         <Link className="link" to="/cart">
           <FiShoppingCart />
         </Link>
+        <span className="cart-qty">{cart.length}</span>
         <Link to="/">
           <button className="buy-now-btn">Buy Now</button>
         </Link>
