@@ -24,12 +24,13 @@
     padding: 10px 20px;
     background-color: #010f1c;
     transition: .3s;
-    box-shadow: rgba(0, 0, 0, 0.25) 5px 3px 5px;
+    border-radius: 5px;
 }
 
 .cart-container .empty-cart .empty-btn:hover {
     color: #010f1c;
     background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.25) 5px 3px 5px;
 }
 
 
