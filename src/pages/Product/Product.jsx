@@ -2,12 +2,13 @@ import React, { useContext } from "react";
 import { AiOutlineHeart } from "react-icons/ai";
 import { BsEye } from "react-icons/bs";
 import { FiShoppingCart } from "react-icons/fi";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ShopContext } from "../../contexts/shop-context";
 import "./Product.css";
 import ProductDetails from "../../components/ProductDetails.jsx/ProductDetails";
 
 const Shop = () => {
+  const navigate = useNavigate();
   const { products, setProducts, ProductsData, view, close, addToCart} = useContext(ShopContext);
 
 
@@ -61,7 +62,7 @@ const Shop = () => {
                     <li onClick={() => addToCart(product)}>
                       <FiShoppingCart />
                     </li>
-                    <li onClick={() => view(product)}>
+                    <li onClick={() => navigate(`/product-details/${product.id}`)}>
                       <BsEye />
                     </li>
                     <li>
@@ -73,7 +74,7 @@ const Shop = () => {
                   <p>{product.productType}</p>
                   <h3 className="product-title">{product.productTitle}</h3>
                   <h3 className="product-price">
-                    ${product.productPrice.toFixed(2)}
+                    ${parseFloat(product.productPrice.toFixed(2))}
                   </h3>
                 </div>
               </div>

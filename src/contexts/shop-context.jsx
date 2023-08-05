@@ -36,14 +36,14 @@ export const ShopContextProvider = (props) => {
     }
   };
 
-  const view = (product) => {
-    setDetail([{ ...product }]);
-    setClose(true);
-  };
+  // const view = (product) => {
+  //   setDetail([{ ...product }]);
+    // setClose(true);
+  // };
 
   const contextValue = {
     detail,
-    view,
+    // view,
     products,
     setProducts,
     ProductsData,

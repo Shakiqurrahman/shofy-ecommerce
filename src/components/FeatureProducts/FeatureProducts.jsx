@@ -5,6 +5,7 @@ import { FiShoppingCart } from "react-icons/fi";
 import "./FeatureProducts.css";
 import ProductDetails from "../ProductDetails.jsx/ProductDetails";
 import { ShopContext } from "../../contexts/shop-context";
+import { useNavigate } from "react-router-dom";
 
 const FeatureProducts = () => {
   const featureData = [
@@ -68,6 +69,8 @@ const FeatureProducts = () => {
     },
   ];
 
+  const navigate = useNavigate();
+
   const {view, close, addToCart} = useContext(ShopContext)
   return (
     <>
@@ -83,7 +86,7 @@ const FeatureProducts = () => {
               <li  onClick={() => addToCart(product)}>
                 <FiShoppingCart />
               </li>
-              <li onClick={() => view(product)}>
+              <li onClick={() => navigate(`product-details/${product.id}`)}>
                 <BsEye />
               </li>
               <li>
