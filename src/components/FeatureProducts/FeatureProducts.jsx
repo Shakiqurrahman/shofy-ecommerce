@@ -80,7 +80,7 @@ const FeatureProducts = () => {
     }
       {featureData.map((product) => (
         <div className="product-card" key={product.id}>
-          <div className="img-box" onClick={() => navigate(`/product-details/${product.id}`)}>
+          <div className="img-box">
             <img src={product.productImg} alt={product.productTitle} />
             <div className="card-icon">
               <li  onClick={() => addToCart(product)}>
