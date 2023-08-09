@@ -26,13 +26,22 @@ const Cart = () => {
     const exsist = cart.find((x) => {
       return x.id === product.id;
     });
-    setCart(
-      cart.map((curElm) => {
-        return curElm.id === product.id
-          ? { ...exsist, qty: exsist.qty - 1 }
-          : curElm;
-      })
-    );
+    if (product.qty > 1) {
+      setCart(
+        cart.map((curElm) => {
+          return curElm.id === product.id
+            ? { ...exsist, qty: exsist.qty - 1 }
+            : curElm;
+        })
+      );
+    }
+    else {
+      setCart(
+        cart.filter((x) => {
+          return x.id !== product.id;
+        })
+      );
+    }
   };
 
   //Remove Cart Product
@@ -41,7 +50,7 @@ const Cart = () => {
     const exsist = cart.find((x) => {
       return x.id === product.id;
     });
-    if (exsist.qty > 0) {
+    if (exsist.qty >= 0) {
       setCart(
         cart.filter((x) => {
           return x.id !== product.id;
@@ -52,7 +61,7 @@ const Cart = () => {
 
   //total price
   const TotalPrice = cart.reduce(
-    (price, item) => price + item.qty * item.Price,
+    (price, item) => price + item.qty * item.productPrice,
     0
   );
 
@@ -70,7 +79,7 @@ const Cart = () => {
       <div className="contant">
         {cart.map((curElm) => {
           return (
-            <div className="cart-item">
+            <div className="cart-item" key={curElm.id}>
               <div className="img-box">
                 <img src={curElm.productImg} alt={curElm.productTitle} />
               </div>
@@ -92,7 +101,7 @@ const Cart = () => {
                 </div>
                 <div className="close">
                   <button onClick={() => removeProduct(curElm)}>
-                    <AiOutlineClose />  Remove
+                    <AiOutlineClose /> Remove
                   </button>
                 </div>
               </div>
@@ -101,10 +110,12 @@ const Cart = () => {
         })}
       </div>
       {cart.length > 0 && (
-        <>
-          <h2 className="total-price">${TotalPrice}</h2>
+        <div className="total-box">
+          <h2 className="total-price">
+            <span>Subtotal</span> <span>${TotalPrice}</span>
+          </h2>
           <button className="checkout">Checkout</button>
-        </>
+        </div>
       )}
     </section>
   );

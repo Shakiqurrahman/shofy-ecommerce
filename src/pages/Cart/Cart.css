@@ -145,22 +145,39 @@
 .cart-container .contant .cart-item  .detail .close button:hover {
     color: #db0045;
 }
+
+.cart-container .total-box {
+    width: 250px;
+    margin:  0 75%;
+    position: sticky;
+}
 .cart-container .total-price
 {
+    color: #4e4e4e;
     margin-top: 30px;
-    margin-left: 50%;
-    font-size: 22px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    font-size: 25px;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
 }
 .cart-container .checkout
 {
-    margin-top: 40px;
-    margin-left: 53%;
+    margin-top: 30px;
+    width: 100%;
     padding: 10px 20px;
+    font-size: 20px;
     color: #fff;
-    border: none;
+    border: 2px solid transparent;
+    border-radius: 5px;
     outline: none;
     background: #0989ff;
     cursor: pointer;
+    transition: .3s;
+}
+
+.cart-container .checkout:hover {
+    background-color: #fff;
+    border: 2px solid #4e4e4e;
+    color: #010f1c ;
+
 }
