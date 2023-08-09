@@ -51,7 +51,7 @@
 
 
 
-@media screen and (max-width: 669px) {
+@media (576px >= width) {
     .products{
         padding: 15px;
     }

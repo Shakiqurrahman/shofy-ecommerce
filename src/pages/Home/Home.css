@@ -221,7 +221,7 @@
 }
 
 
-@media screen and (max-width: 669px) {
+@media (576px >= width) {
   .hero-section {
     flex-direction: column;
     height: auto;
