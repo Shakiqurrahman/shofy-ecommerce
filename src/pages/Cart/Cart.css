@@ -181,3 +181,9 @@
     color: #010f1c ;
 
 }
+
+@media screen and (width <= 1000px){
+    .cart-container {
+        padding: 20px 30px;
+    }
+}

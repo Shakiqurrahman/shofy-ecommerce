@@ -1,35 +1,48 @@
-.error-page{
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.error-page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.error-title{
-    font-size: 5rem;
+.error-title {
+  font-size: 5rem;
 }
-.error-page p{
-    font-size: 1.5rem;
-}
-
-.error-page .error-btn{
-    outline: none;
-    background-color: #0989ff;
-    color: white;
-    padding: 10px 20px;
-    font-size: 1.5rem;
-    margin-top: 10px;
-    border-radius: 10px;
-    border: none;
-    display: flex;
-    align-items: center;
+.error-page p {
+  font-size: 1.5rem;
 }
 
-.error-btn .arrow-icon{
-    margin-left: 10px;
+.error-page .error-btn {
+  outline: none;
+  background-color: #0989ff;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  margin-top: 20px;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  display: flex;
+  align-items: center;
+  transition: .3s;
 }
 
-.error-page img{
-    width: 30%;
+.error-page .error-btn:hover {
+    color: #0989ff;
+    background-color: #fff;
+    border: 2px solid #0989ff;
+}
+
+.error-btn .arrow-icon {
+  margin-left: 10px;
+}
+
+.error-page img {
+  width: 30%;
+}
+
+@media (576px >= width) {
+  .error-page img {
+    width: 80%;
+  }
 }

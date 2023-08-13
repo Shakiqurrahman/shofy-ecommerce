@@ -91,7 +91,7 @@
 
 
 
-@media screen and (max-width:600px){
+@media screen and (width <= 576px){
     .cart-icon .buy-now-btn {
         display: none;
     }
@@ -107,6 +107,9 @@
         position: absolute;
         left: -500px; 
      }
+     .nav-links li {
+        margin-bottom: 10px;
+     }
     .mobile-nav {
         display: block;
         flex-direction: column;
@@ -119,7 +122,39 @@
         transition: .3s ease-in-out;
         z-index: 10000;
     }
+  
+}
+@media screen and (577px <= width <= 1000px){
+    .cart-icon .buy-now-btn {
+        display: none;
+    }
 
-    
-    
+    .header{
+        padding: 1rem;
+    }
+    .hamburger-menu {
+        display: block;
+    }
+    .nav-links {
+        top: 72px;
+        position: absolute;
+        left: -500px; 
+     }
+
+     .nav-links li {
+        margin-bottom: 10px;
+     }
+    .mobile-nav {
+        display: block;
+        flex-direction: column;
+        align-items: center;
+        top: 72px;
+        left: 0;
+        padding: 1rem;
+        background-color: #f0f2ee;
+        width: 100%;
+        transition: .3s ease-in-out;
+        z-index: 10000;
+    }
+  
 }

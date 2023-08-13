@@ -10,8 +10,8 @@
   }
   
   .product-detail .detail-container{
+    margin: 0 auto;
     margin-top: 10%;
-    margin-left: 10%;
     width: 80%;
     height: 80vh;
     background: #fff;
@@ -100,3 +100,89 @@
   .product-detail .detail-container .productbox .detail button:hover {
     background-color: #0989ff;
   }
+
+  @media screen and (width <= 1350px) {
+    .product-detail .detail-container{
+      width: 90%;
+      height: auto;
+    }
+    .product-detail .detail-container .productbox .img-box{
+      padding: 20px 30px;
+      width: 350px;
+      height: 350px;
+      background: #f1f1f1;
+    }
+    
+    .product-detail .detail-container .productbox .img-box img {
+      width: 200px;
+      height: 200px;
+    }
+    
+    .product-detail .detail-container .productbox .detail h2{
+      margin-top: 5px;
+      font-size: 22px;
+    }
+
+    .product-detail .detail-container .productbox .detail p {
+      font-size: 14px;
+    }
+    .product-detail .detail-container .productbox .detail h3{
+      font-size: 30px;
+    }
+    .product-detail .detail-container .productbox .detail button {
+      margin-top: 10px;
+      padding: 15px 50px;
+      font-size: 18px;
+    }
+  }
+
+  @media screen and (width <= 800px) {
+    .product-detail .detail-container .productbox{
+      flex-direction: column;
+      margin-top: 0;
+      padding: 0;
+    }
+    .product-detail .detail-container .productbox .img-box{
+      margin: 0 auto;
+      width: 260px;
+      height: 240px;
+    }
+  }
+
+  @media screen and (width <= 700px) {
+    .product-detail {
+      padding: 50px 0 20px;
+      margin-top: -20%;
+    }
+    .product-detail .detail-container{
+      padding: 10px 30px 20px;
+    }
+    .product-detail .detail-container .productbox .img-box{
+      padding: 0;
+      width: 200px;
+      height: 200px;
+    }
+
+    .product-detail .detail-container .productbox .img-box img {
+      width: 200px;
+      height: 200px;
+    }
+    
+    .product-detail .detail-container .productbox .detail h2{
+      margin-top: 5px;
+      font-size: 16px;
+    }
+
+    .product-detail .detail-container .productbox .detail p {
+      font-size: 10px;
+    }
+    .product-detail .detail-container .productbox .detail h3{
+      font-size: 25px;
+    }
+    .product-detail .detail-container .productbox .detail button {
+      margin-top: 10px;
+      padding: 10px 25px;
+      font-size: 15px;
+    }
+  }
+

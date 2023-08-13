@@ -86,7 +86,7 @@ hr{
   color: #0989ff;
 }
 
-@media screen and (max-width:669px) {
+@media screen and (800px >= width) {
     .footer .container{
         flex-direction: column;
     }

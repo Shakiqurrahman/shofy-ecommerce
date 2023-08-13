@@ -35,7 +35,20 @@ a, button{
   z-index: 100000;
 }
 
-@media  screen and (max-width:669px) {
+@media  screen and (801px <= width <= 1280px) {
+  .container{
+    padding: 0 30px;
+
+  }
+}
+@media  screen and (601px <= width <= 800px) {
+  .container{
+    padding: 0 40px;
+
+  }
+}
+
+@media  screen and (width <= 600px) {
   .container{
     padding: 0 15px;
 
