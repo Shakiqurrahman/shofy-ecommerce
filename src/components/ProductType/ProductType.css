@@ -31,11 +31,15 @@
 
 @media  screen and (max-width:669px) {
     .box .img-box{
-        width: 180px;
-        height: 180px;
+        width: 130px;
+        height: 130px;
     }
     .box .details{
         margin-bottom: 30px;
+    }
+
+    .details .details-title {
+        font-size: 18px;
     }
    
 }

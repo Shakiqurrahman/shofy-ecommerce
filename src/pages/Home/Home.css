@@ -233,15 +233,20 @@
   }
 
   .hero-section .img {
+    width: 100%;
     margin-top: 40px;
     margin-bottom: 40px;
+  }
+
+  .hero-section .img img {
+    width: 100%;
   }
   .hero-section .hero-title {
     font-size: 35px;
     width: 100%;
   }
   .product-type {
-    grid-template-columns: 220px 220px;
+    grid-template-columns: 150px 150px;
     margin-bottom: 0px;
     padding: 0;
     padding-left: 40px;
@@ -257,14 +262,27 @@
   .banner {
     flex-direction: column;
     padding: 40px 20px;
+    overflow: hidden;
   }
 
   .banner .banner-details h2{
     width: 100%;
-    font-size: 30px;
+    font-size: 25px;
   }
+
   .banner .banner-img{
     margin-top: 20px;
+    width: 90%;
+  }
+
+  .banner .banner-img img {
+    width: 100%;
+  }
+
+  .banner .shape{
+    width: 300px;
+    height: 300px;
+    margin-top: 40px;
   }
 
  

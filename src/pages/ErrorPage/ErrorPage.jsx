@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { BsArrowRight } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import "./ErrorPage.css";
-import errorImg from "/images/error.webp";
+import errorImg from "/images/error.jpeg";
 const ErrorPage = () => {
 
   return (
