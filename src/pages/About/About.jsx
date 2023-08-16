@@ -1,6 +1,9 @@
 import React from "react";
 import "./About.css";
 import { useState } from "react";
+import Faq from '../../components/FAQ/Faq'
+import { Collapse } from "react-collapse";
+
 
 const About = () => {
     const [mission, setMission] = useState(true);
@@ -58,6 +61,7 @@ const About = () => {
         </p>
         </>}
       </div>
+      <Faq />
     </section>
   );
 };
