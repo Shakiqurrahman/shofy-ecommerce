@@ -72,7 +72,7 @@ const Footer = () => {
         </div>
       </div>
       <hr />
-      <p className="copyright">© 2023 All Rights Reserved | HTML Template by <Link target='_blank' to='https://shakiqur-rahman.netlify.app/#'>Shakiqur Rahman</Link>.</p>
+      <p className="copyright">© 2023 All Rights Reserved | Template by <Link target='_blank' to='https://shakiqur-rahman.netlify.app/#'>Shakiqur Rahman</Link>.</p>
     </footer>
   );
 };

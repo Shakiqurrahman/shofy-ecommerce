@@ -9,6 +9,8 @@ import { ShopContextProvider } from "./contexts/shop-context";
 import Cart from "./pages/Cart/Cart";
 import { ToastContainer } from "react-toastify";
 import ProductDetails from "./components/ProductDetails.jsx/ProductDetails";
+import About from "./pages/About/About";
+import Contact from "./pages/Contact/Contact";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +28,14 @@ const router = createBrowserRouter([
       {
         path: "cart",
         element: <Cart />
+      },
+      {
+        path: "about",
+        element: <About />
+      },
+      {
+        path: "contact",
+        element: <Contact />
       },
       {
         path: "/product-details/:id",
