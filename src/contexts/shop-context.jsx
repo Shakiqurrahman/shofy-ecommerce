@@ -1,15 +1,42 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from "react-toastify";
 
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
 
-import ProductsData from "../data/productsData";
+import axios from "axios";
 
 export const ShopContext = createContext(null);
 
 export const ShopContextProvider = (props) => {
-  const [products, setProducts] = useState(ProductsData);
+  const [products, setProducts] = useState([]);
+  const [filteredProducts, setFilteredProducts] = useState([]);
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await axios.get('http://localhost:8101/api/products');
+        setProducts(response.data);
+        setFilteredProducts(response.data)
+      } catch (err) {
+        console.error('Error fetching products:', err);
+      }
+    };
+
+    fetchProducts();
+  }, [])
+
+
+  const filterProductsHandler = (productCategory) => {
+    const update = products.filter((data) => {
+      return data.category === productCategory.toLowerCase();
+    });
+    setFilteredProducts(update);
+  };
+
+  const allProductsHandler = () => {
+    setFilteredProducts(products);
+  };
+  
 
   const [detail, setDetail] = useState([]);
 
@@ -17,36 +44,34 @@ export const ShopContextProvider = (props) => {
 
   const [cart, setCart] = useState([]);
 
-
-
   const addToCart = (product) => {
     const exsist = cart.find((x) => {
       return x.id === product.id;
     });
     if (exsist) {
-      toast.warn('This product is already added to the cart', {
-        position: toast.POSITION.BOTTOM_LEFT
-      })
-      
+      toast.warn("This product is already added to the cart", {
+        position: toast.POSITION.BOTTOM_LEFT,
+      });
     } else {
       setCart([...cart, { ...product, qty: 1 }]);
-      toast.success('Product is added succesfully',{
-        position: toast.POSITION.BOTTOM_LEFT
-      })
+      toast.success("Product is added succesfully", {
+        position: toast.POSITION.BOTTOM_LEFT,
+      });
     }
   };
 
   // const view = (product) => {
   //   setDetail([{ ...product }]);
-    // setClose(true);
+  // setClose(true);
   // };
 
   const contextValue = {
     detail,
     // view,
+    filteredProducts,
+    allProductsHandler,
+    filterProductsHandler,
     products,
-    setProducts,
-    ProductsData,
     close,
     setClose,
     cart,

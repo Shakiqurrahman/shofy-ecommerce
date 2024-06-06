@@ -2,10 +2,10 @@ import React, { useContext } from "react";
 import { AiOutlineHeart } from "react-icons/ai";
 import { BsEye } from "react-icons/bs";
 import { FiShoppingCart } from "react-icons/fi";
-import "./FeatureProducts.css";
-import ProductDetails from "../ProductDetails.jsx/ProductDetails";
-import { ShopContext } from "../../contexts/shop-context";
 import { useNavigate } from "react-router-dom";
+import { ShopContext } from "../../contexts/shop-context";
+// import ProductDetails from "../ProductDetails.jsx/ProductDetails";
+import "./FeatureProducts.css";
 
 const FeatureProducts = () => {
   const featureData = [
@@ -71,19 +71,16 @@ const FeatureProducts = () => {
 
   const navigate = useNavigate();
 
-  const {view, close, addToCart} = useContext(ShopContext)
+  const { view, close, addToCart } = useContext(ShopContext);
   return (
     <>
-    { close ?
-      <ProductDetails />
-      : ""
-    }
+      {/* {close ? <ProductDetails /> : ""} */}
       {featureData.map((product) => (
         <div className="product-card" key={product.id}>
           <div className="img-box">
             <img src={product.productImg} alt={product.productTitle} />
             <div className="card-icon">
-              <li  onClick={() => addToCart(product)}>
+              <li onClick={() => addToCart(product)}>
                 <FiShoppingCart />
               </li>
               <li onClick={() => navigate(`product-details/${product.id}`)}>
@@ -94,7 +91,10 @@ const FeatureProducts = () => {
               </li>
             </div>
           </div>
-          <div className="details" onClick={() => navigate(`/product-details/${product.id}`)}>
+          <div
+            className="details"
+            onClick={() => navigate(`/product-details/${product.id}`)}
+          >
             <p>{product.productType}</p>
             <h3 className="product-title">{product.productTitle}</h3>
             <h3 className="product-price">

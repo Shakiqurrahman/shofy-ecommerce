@@ -1,27 +1,36 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./ProductType.css";
+import { ShopContext } from "../../contexts/shop-context";
 
 const ProductType = () => {
+  const {  products } = useContext(ShopContext);
+  const productAvailability = (product) => {
+    const available = products.filter((p) => {
+      return p?.category === product.toLowerCase();
+    });
+    return available.length;
+  }
+
   const productTypeData = [
     {
       productName: "Headphones",
       productImg: "/images/headphone.png",
-      productAvailability: "23 Product",
+      productAvailability: productAvailability("Headphone"),
     },
     {
       productName: "Mobile Phone",
       productImg: "/images/Mobile Phone.png",
-      productAvailability: "18 Product",
+      productAvailability: productAvailability("Mobile Phone"),
     },
     {
       productName: "CPU Heat Pipes",
       productImg: "/images/cpu.webp",
-      productAvailability: "52 Product",
+      productAvailability: productAvailability("CPU"),
     },
     {
       productName: "Smart Watch",
       productImg: "/images/smart watch.png",
-      productAvailability: "63 Product",
+      productAvailability: productAvailability("Smart Watch"),
     },
   ];
   return (
@@ -34,7 +43,7 @@ const ProductType = () => {
           </div>
           <div className="details">
             <h6 className="details-title">{data.productName}</h6>
-            <p>{data.productAvailability}</p>
+            <p>{data.productAvailability} Products</p>
           </div>
         </div>
         </div>

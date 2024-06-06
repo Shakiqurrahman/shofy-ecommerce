@@ -27,6 +27,10 @@
   gap: 80px;
 }
 
+.products-section .product-box .details .product-category {
+  text-transform: capitalize;
+}
+
 .products .products-section .filter {
   padding: 20px 30px;
   margin-right: 60px;
