@@ -15,18 +15,17 @@ export const ShopContextProvider = (props) => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get('http://localhost:8101/api/products');
+        const response = await axios.get("http://localhost:8101/api/products");
         setProducts(response.data);
         setFilteredProducts(response.data);
-        setFeaturedProducts(response.data.slice(0, 4)); 
+        setFeaturedProducts(response.data.slice(0, 4));
       } catch (err) {
-        console.error('Error fetching products:', err);
+        console.error("Error fetching products:", err);
       }
     };
 
     fetchProducts();
-  }, [])
-
+  }, []);
 
   const filterProductsHandler = (productCategory) => {
     const update = products.filter((data) => {
@@ -38,11 +37,6 @@ export const ShopContextProvider = (props) => {
   const allProductsHandler = () => {
     setFilteredProducts(products);
   };
-  
-
-  const [detail, setDetail] = useState([]);
-
-  const [close, setClose] = useState(false);
 
   const [cart, setCart] = useState([]);
 
@@ -62,19 +56,28 @@ export const ShopContextProvider = (props) => {
     }
   };
 
+  useEffect(() => {
+    // Load cart from localStorage
+    const savedCart = JSON.parse(localStorage.getItem("cart"));
+    if (savedCart) {
+      setCart(savedCart);
+    }
+  }, []);
+
+  useEffect(() => {
+    // Save cart to localStorage
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [cart]);
 
   const contextValue = {
-    detail,
     filteredProducts,
     allProductsHandler,
     filterProductsHandler,
     products,
-    close,
-    setClose,
     cart,
     setCart,
     addToCart,
-    featuredProducts
+    featuredProducts,
   };
   return (
     <ShopContext.Provider value={contextValue}>

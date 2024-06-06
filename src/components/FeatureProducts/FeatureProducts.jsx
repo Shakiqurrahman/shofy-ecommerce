@@ -11,11 +11,10 @@ import { ShopContext } from "../../contexts/shop-context";
 const FeatureProducts = () => {
   const navigate = useNavigate();
 
-  const {  addToCart, close, featuredProducts } = useContext(ShopContext);
+  const {  addToCart, featuredProducts } = useContext(ShopContext);
 
   return (
     <>
-      {close ? <ProductDetails /> : ""}
       {featuredProducts.map((product) => (
         <div className="product-card" key={product._id}>
           <div className="img-box">

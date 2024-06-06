@@ -9,15 +9,10 @@ import ProductDetails from "../../components/ProductDetails.jsx/ProductDetails";
 
 const Shop = () => {
   const navigate = useNavigate();
-  const { filteredProducts, addToCart, filterProductsHandler, allProductsHandler, close } = useContext(ShopContext);
+  const { filteredProducts, addToCart, filterProductsHandler, allProductsHandler } = useContext(ShopContext);
 
   return (
     <>
-      { close ?
-      <ProductDetails />
-      : ""
-    }
-
       <div className="products">
         <h2># Products</h2>
         <p>
