@@ -65,8 +65,6 @@ const Cart = () => {
     0
   );
 
-  console.log(cart);
-
   return (
     <section className="cart-container">
       {cart.length === 0 && (

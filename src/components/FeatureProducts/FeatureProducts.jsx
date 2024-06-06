@@ -35,7 +35,7 @@ const FeatureProducts = () => {
             className="details"
             onClick={() => navigate(`/product-details/${product._id}`)}
           >
-            <p>{product?.name}</p>
+            <p>{product?.category}</p>
             <h3 className="product-title">{product?.name}</h3>
             <h3 className="product-price">
               ${product?.price.toFixed(2)}

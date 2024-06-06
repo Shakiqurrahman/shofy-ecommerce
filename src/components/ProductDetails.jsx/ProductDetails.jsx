@@ -16,7 +16,7 @@ const ProductDetails = () => {
   const navigate = useNavigate();
 
   return (
-    <>
+    <section className="details-section">
       <div className="product-detail">
         <div className="detail-container">
           <button onClick={() => navigate(-1)} className="close-btn">
@@ -42,7 +42,7 @@ const ProductDetails = () => {
           </div>
         </div>
       </div>
-    </>
+    </section>
   );
 };
 
