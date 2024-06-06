@@ -11,12 +11,14 @@ export const ShopContext = createContext(null);
 export const ShopContextProvider = (props) => {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
+  const [featuredProducts, setFeaturedProducts] = useState([]);
   useEffect(() => {
     const fetchProducts = async () => {
       try {
         const response = await axios.get('http://localhost:8101/api/products');
         setProducts(response.data);
-        setFilteredProducts(response.data)
+        setFilteredProducts(response.data);
+        setFeaturedProducts(response.data.slice(0, 4)); 
       } catch (err) {
         console.error('Error fetching products:', err);
       }
@@ -46,7 +48,7 @@ export const ShopContextProvider = (props) => {
 
   const addToCart = (product) => {
     const exsist = cart.find((x) => {
-      return x.id === product.id;
+      return x._id === product._id;
     });
     if (exsist) {
       toast.warn("This product is already added to the cart", {
@@ -60,14 +62,9 @@ export const ShopContextProvider = (props) => {
     }
   };
 
-  // const view = (product) => {
-  //   setDetail([{ ...product }]);
-  // setClose(true);
-  // };
 
   const contextValue = {
     detail,
-    // view,
     filteredProducts,
     allProductsHandler,
     filterProductsHandler,
@@ -77,6 +74,7 @@ export const ShopContextProvider = (props) => {
     cart,
     setCart,
     addToCart,
+    featuredProducts
   };
   return (
     <ShopContext.Provider value={contextValue}>

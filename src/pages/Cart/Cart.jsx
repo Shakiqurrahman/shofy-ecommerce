@@ -5,16 +5,16 @@ import { ShopContext } from "../../contexts/shop-context";
 import "./Cart.css";
 
 const Cart = () => {
-  const { cart, setCart, addToCart } = useContext(ShopContext);
+  const { cart, setCart } = useContext(ShopContext);
 
   // increament quantity
   const incqty = (product) => {
     const exsist = cart.find((x) => {
-      return x.id === product.id;
+      return x._id === product._id;
     });
     setCart(
       cart.map((curElm) => {
-        return curElm.id === product.id
+        return curElm._id === product._id
           ? { ...exsist, qty: exsist.qty + 1 }
           : curElm;
       })
@@ -24,12 +24,12 @@ const Cart = () => {
   //decreament quantity
   const decqty = (product) => {
     const exsist = cart.find((x) => {
-      return x.id === product.id;
+      return x._id === product._id;
     });
     if (product.qty > 1) {
       setCart(
         cart.map((curElm) => {
-          return curElm.id === product.id
+          return curElm._id === product._id
             ? { ...exsist, qty: exsist.qty - 1 }
             : curElm;
         })
@@ -38,7 +38,7 @@ const Cart = () => {
     else {
       setCart(
         cart.filter((x) => {
-          return x.id !== product.id;
+          return x._id !== product._id;
         })
       );
     }
@@ -48,12 +48,12 @@ const Cart = () => {
 
   const removeProduct = (product) => {
     const exsist = cart.find((x) => {
-      return x.id === product.id;
+      return x._id === product._id;
     });
     if (exsist.qty >= 0) {
       setCart(
         cart.filter((x) => {
-          return x.id !== product.id;
+          return x._id !== product._id;
         })
       );
     }
@@ -61,9 +61,11 @@ const Cart = () => {
 
   //total price
   const TotalPrice = cart.reduce(
-    (price, item) => price + item.qty * item.productPrice,
+    (price, item) => price + item.qty * item.price,
     0
   );
+
+  console.log(cart);
 
   return (
     <section className="cart-container">
@@ -79,15 +81,15 @@ const Cart = () => {
       <div className="contant">
         {cart.map((curElm) => {
           return (
-            <div className="cart-item" key={curElm.id}>
+            <div className="cart-item" key={curElm._id}>
               <div className="img-box">
-                <img src={curElm.productImg} alt={curElm.productTitle} />
+                <img src={curElm.productImg} alt={curElm.name} />
               </div>
               <div className="detail">
                 <div className="info">
-                  <h4>{curElm.productType}</h4>
-                  <h3>{curElm.productTitle}</h3>
-                  <p>Price: ${curElm.productPrice}</p>
+                  <h4>{curElm.category}</h4>
+                  <h3>{curElm.name}</h3>
+                  <p>Price: ${curElm.price}</p>
                   <div className="qty">
                     <button className="decqty" onClick={() => decqty(curElm)}>
                       -
@@ -97,7 +99,7 @@ const Cart = () => {
                       +
                     </button>
                   </div>
-                  <h4>Sub Total : ${curElm.productPrice * curElm.qty}</h4>
+                  <h4>Sub Total : ${curElm.price * curElm.qty}</h4>
                 </div>
                 <div className="close">
                   <button onClick={() => removeProduct(curElm)}>
