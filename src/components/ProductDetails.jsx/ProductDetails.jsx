@@ -9,9 +9,8 @@ const ProductDetails = () => {
   const { addToCart, products, cart } = useContext(ShopContext);
 
   const detail = products.find((p) => p._id === id);
-  console.log(detail);
 
-  const exist = cart.find((x) => x.id === detail._id);
+  const exist = cart.find((x) => x._id === detail._id);
 
   const navigate = useNavigate();
 
