@@ -22,7 +22,6 @@
 
 .products-section .product-box {
   display: flex;
-  justify-content: space-around;
   flex-wrap: wrap;
   gap: 80px;
 }
