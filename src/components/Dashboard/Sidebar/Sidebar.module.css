@@ -1,0 +1,27 @@
+.sidebar {
+    background: white;
+    padding: 30px;
+    width: 250px;
+}
+.sidebar .navLinks {
+    margin-top: 40px;
+}
+
+
+.sidebar .navLinks ul a li{
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+    align-items: center;
+    color: black;
+    font-size: 18px;
+    font-weight: 500;
+}
+.sidebar .navLinks ul a li:hover{
+    color: #0989ff;
+    transition: .3s;
+}
+
+.sidebar .navLinks ul a li svg {
+    font-size: 22px;
+}

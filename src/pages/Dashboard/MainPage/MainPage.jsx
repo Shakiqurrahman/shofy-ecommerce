@@ -6,7 +6,7 @@ const MainPage = () => {
     return (
         <main className='dashboard'>
             <Sidebar />
-            <div>
+            <div className='rightSide'>
                 helllo my friend
             </div>
         </main>

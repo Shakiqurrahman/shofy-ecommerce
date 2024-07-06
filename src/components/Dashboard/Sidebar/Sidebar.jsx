@@ -3,16 +3,16 @@ import { FcTwoSmartphones } from "react-icons/fc";
 import { IoBagAddSharp } from "react-icons/io5";
 import { MdDashboard, MdLogout } from "react-icons/md";
 import { Link } from "react-router-dom";
-import "./Sidebar.css";
+import styles from "./Sidebar.module.css";
 import logo from "/logo.svg";
 
 const Header = () => {
     return (
-        <aside id="sidebar">
-            <div className="logo">
+        <aside className={styles.sidebar}>
+            <div className={styles.logo}>
                 <img src={logo} alt="Logo" />
             </div>
-            <nav className="nav-links">
+            <nav className={styles.navLinks}>
                 <ul>
                     <Link to="/admin/dashboard">
                         <li>
