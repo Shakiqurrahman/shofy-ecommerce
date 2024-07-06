@@ -1,6 +1,6 @@
 .dashboard {
     display: flex;
-    gap: 40px;
+    gap: 10px;
     background: #f3f3f3;
     min-height: 100vh;
 }
