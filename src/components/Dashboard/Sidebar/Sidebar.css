@@ -1,0 +1,19 @@
+#sidebar .nav-links {
+
+}
+
+
+#sidebar .nav-links ul a li{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    color: black;
+}
+#sidebar .nav-links ul a li:hover{
+    color: #0989ff;
+    transition: .3s;
+}
+
+#sidebar .nav-links ul a li svg {
+    font-size: 25px;
+}
