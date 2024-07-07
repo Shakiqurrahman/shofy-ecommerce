@@ -51,7 +51,7 @@ const Header = () => {
         </Link>
         <span className="cart-qty">{cart.length}</span>
         <Link to="/">
-          <button className="buy-now-btn">Buy Now</button>
+          <button className="login-btn">Login</button>
         </Link>
 
         {/* hamburger */}

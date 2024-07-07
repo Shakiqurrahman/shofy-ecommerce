@@ -63,11 +63,11 @@
     color: #0989ff;
 }
 
-.cart-icon .buy-now-btn {
+.cart-icon .login-btn {
     background-color: transparent;
     border: none;
     border: 2px solid rgba(1, 15, 28, 0.1);
-    padding: 5px 15px;
+    padding: 7px 22px;
     border-radius: 20px;
     font-size: 18px;
     font-weight: 500;
@@ -76,7 +76,7 @@
 
 }
 
-.cart-icon .buy-now-btn:hover {
+.cart-icon .login-btn:hover {
     border-color: #0989ff;
 }
 
@@ -92,7 +92,7 @@
 
 
 @media screen and (width <= 576px){
-    .cart-icon .buy-now-btn {
+    .cart-icon .login-btn {
         display: none;
     }
 
@@ -125,7 +125,7 @@
   
 }
 @media screen and (577px <= width <= 1000px){
-    .cart-icon .buy-now-btn {
+    .cart-icon .login-btn {
         display: none;
     }
 
