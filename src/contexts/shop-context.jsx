@@ -15,7 +15,7 @@ export const ShopContextProvider = (props) => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get("http://localhost:8101/api/products");
+        const response = await axios.get("https://shofy-ecommerce-server.vercel.app/api/products");
         setProducts(response.data);
         setFilteredProducts(response.data);
         setFeaturedProducts(response.data.slice(0, 4));
