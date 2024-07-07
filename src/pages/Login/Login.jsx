@@ -1,5 +1,7 @@
 import React from "react";
 import "./Login.css";
+import { FcGoogle } from "react-icons/fc";
+
 
 const Login = () => {
     return (
@@ -18,6 +20,10 @@ const Login = () => {
                         <div className="line"></div>
                         <span className="or">Or</span>
                         <div className="line"></div>
+                    </div>
+                    <div className="google-btn">
+                        <FcGoogle size={28} />
+                        <span>Login With Google</span>
                     </div>
                 </div>
                 <div className="right-side">
