@@ -5,19 +5,21 @@ const Login = () => {
     return (
         <section className="login-page">
             <div className="login-box">
-                <form className="login-form">
-                    <h1>Login</h1>
-                    <input type="email" placeholder="Email" />
-                    <input type="password" placeholder="Password" />
-                    <button className="login-btn" type="submit">
-                        Login
-                    </button>
+                <div className="login-form">
+                    <form>
+                        <h1>Login</h1>
+                        <input type="email" placeholder="Email" required/>
+                        <input type="password" placeholder="Password" required/>
+                        <button className="login-btn" type="submit">
+                            Login
+                        </button>
+                    </form>
                     <div className="separator">
                         <div className="line"></div>
                         <span className="or">Or</span>
                         <div className="line"></div>
                     </div>
-                </form>
+                </div>
                 <div className="right-side">
                     <h2>Welcome Again!</h2>
                     <p>
