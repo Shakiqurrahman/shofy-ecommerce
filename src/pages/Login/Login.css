@@ -1,0 +1,100 @@
+.login-page {
+    padding: 80px 7.5rem;
+    min-height: 80vh;
+    background: #f0f0f0;
+}
+
+.login-page .login-box {
+    width: 1200px;
+    display: flex;
+    margin: 0 auto;
+}
+
+.login-page .login-box .login-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 40px;
+    background-color: white;
+    border-radius: 50px 0 0 0;
+}
+
+.login-page .login-form h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.login-page .login-form input {
+    width: 100%;
+    padding: 15px 20px;
+    max-width: 400px;
+    /* border: none; */
+    border: 1px solid #d8d8d8;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-size: 15px;
+}
+
+.login-page .login-form .login-btn {
+    width: 100%;
+    padding: 15px 20px;
+    max-width: 400px;
+    border: 1px solid transparent;
+    background-color: #0989ff;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 15px;
+    border-radius: 10px;
+    /* margin-bottom: 20px; */
+}
+
+.login-page .login-form .login-btn:hover {
+    background-color: white;
+    color: #0989ff;
+    border: 1px solid #0989ff;
+    transition: 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.login-page .login-box .right-side {
+    width: 100%;
+    border-radius: 0 50px 0 0;
+    padding: 40px;
+    background-color: #0989ff;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-page .login-box .right-side h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.login-page .login-box .right-side p {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+.login-page .login-box .right-side div {
+    background: #2495ff;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 20px;
+    color: white;
+}
+
+.login-page .login-box .right-side div a {
+    color: white;
+    text-decoration: underline;
+}
+
+.login-page .login-box .right-side div a:hover {
+    color: #0b1bff;
+    transition: 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}

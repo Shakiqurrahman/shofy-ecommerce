@@ -50,7 +50,7 @@ const Header = () => {
           <FiShoppingCart />
         </Link>
         <span className="cart-qty">{cart.length}</span>
-        <Link to="/">
+        <Link to="/login">
           <button className="login-btn">Login</button>
         </Link>
 

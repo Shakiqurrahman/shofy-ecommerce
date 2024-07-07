@@ -12,6 +12,7 @@ import ProductDetails from "./components/ProductDetails.jsx/ProductDetails";
 import About from "./pages/About/About";
 import Contact from "./pages/Contact/Contact";
 import MainPage from "./pages/Dashboard/MainPage/MainPage";
+import Login from './pages/Login/Login.jsx'
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+      },
+      {
+        path: "/login",
+        element: <Login />,
       },
       {
         path: "/product",
