@@ -70,7 +70,7 @@
     }
 }
 
-@media screen and (768px <= width <= 1024px){
+@media screen and (768px <= width <= 1150px){
     .sidebar {
         width: 0;
         padding: 0;
