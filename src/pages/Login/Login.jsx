@@ -9,12 +9,25 @@ const Login = () => {
                     <h1>Login</h1>
                     <input type="email" placeholder="Email" />
                     <input type="password" placeholder="Password" />
-                    <button className="login-btn" type="submit">Login</button>
+                    <button className="login-btn" type="submit">
+                        Login
+                    </button>
+                    <div className="separator">
+                        <div className="line"></div>
+                        <span className="or">Or</span>
+                        <div className="line"></div>
+                    </div>
                 </form>
                 <div className="right-side">
                     <h2>Welcome Again!</h2>
-                    <p>Welcome back! We are so happy to have you here. It's great to see you again. We hope you had a safe and enjoyable time away.</p>
-                    <div>No account yet? <a href="/signup">Sign up</a></div>
+                    <p>
+                        Welcome back! We are so happy to have you here. It's
+                        great to see you again. We hope you had a safe and
+                        enjoyable time away.
+                    </p>
+                    <div>
+                        No account yet? <a href="/signup">Sign up</a>
+                    </div>
                 </div>
             </div>
         </section>
