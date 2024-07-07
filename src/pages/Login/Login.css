@@ -40,6 +40,11 @@
     font-size: 15px;
 }
 
+.login-page .login-form input:focus {
+    border-color: #0989ff;
+    transition: .3s linear ;
+}
+
 .login-page .login-form .login-btn {
     width: 100%;
     padding: 15px 20px;
