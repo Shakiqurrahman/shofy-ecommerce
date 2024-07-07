@@ -1,6 +1,6 @@
 import React from "react";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import Layout from "./layout/layout";
+import Layout from "./layout/Layout.jsx";
 import Home from "./pages/Home/Home";
 import Product from "./pages/Product/Product";
 import ErrorPage from "./pages/ErrorPage/ErrorPage";
