@@ -7,6 +7,8 @@
 .sidebar .between {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    gap: 30px;
 }
 .sidebar .navLinks {
     margin-top: 40px;
@@ -34,6 +36,8 @@
 .sidebar .hamburger {
     font-size: 25px;
     display: none;
+    z-index: 50;
+    cursor: pointer;
 }
 
 .showNavLinks {
@@ -47,6 +51,7 @@
         position: absolute;
         top: 0;
         width: 100%;
+        padding: 15px 20px 10px;
     }
     .hideSidebar {
         display: none;
@@ -71,13 +76,23 @@
         padding: 0;
         margin: 30px;
     }
-    .showNavLinks {
-        display: block !important;
-    }
+
     .logo,
     .navLinks {
         display: none;
     }
+
+    .showSidebar {
+        width: auto;
+        margin: 0;
+        padding: 30px;
+    }
+
+    .showNavLinks, .showLogo {
+        display: block !important;
+        z-index: 50;
+    }
+    
     .sidebar .hamburger {
         display: block;
     }

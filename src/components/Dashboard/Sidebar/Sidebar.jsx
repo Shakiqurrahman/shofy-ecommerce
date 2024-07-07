@@ -3,7 +3,9 @@ import { FcTwoSmartphones } from "react-icons/fc";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoBagAddSharp } from "react-icons/io5";
 import { MdDashboard, MdLogout } from "react-icons/md";
-import { RxCross2 } from "react-icons/rx";
+import { IoCloseSharp } from "react-icons/io5";
+
+
 
 import { Link } from "react-router-dom";
 import styles from "./Sidebar.module.css";
@@ -15,18 +17,28 @@ const Header = () => {
     const handleToggle = () => {
         setActiveSidebar(!activeSidebar);
         console.log(activeSidebar);
-    }
+    };
     return (
-        <aside className={styles.sidebar}>
+        <aside className={`${
+                        activeSidebar ? `${styles.showSidebar}` : `${styles.sidebar}`
+                    } ${styles.sidebar}`}>
             <div className={styles.between}>
-                <div className={styles.logo}>
+                <div
+                    className={`${
+                        activeSidebar ? styles.showLogo : styles.logo
+                    }`}
+                >
                     <img src={logo} alt="Logo" />
                 </div>
-                <div className={` ${styles.hamburger}`} onClick={handleToggle}>
-                    {activeSidebar ? <RxCross2 /> : <GiHamburgerMenu />}
+                <div className={styles.hamburger} onClick={handleToggle}>
+                    {activeSidebar ? <IoCloseSharp size={28}/> : <GiHamburgerMenu />}
                 </div>
             </div>
-            <nav className={`${activeSidebar && `${styles.showNavLinks}`} ${styles.navLinks}`}>
+            <nav
+                className={`${activeSidebar && `${styles.showNavLinks}`} ${
+                    styles.navLinks
+                }`}
+            >
                 <ul>
                     <Link to="/admin/dashboard">
                         <li>
