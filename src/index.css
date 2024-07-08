@@ -1,3 +1,22 @@
+/* css password visibility */
+.password-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+}
+
+.password-toggle-icon {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+
+
 .separator {
   display: flex;
   align-items: center;

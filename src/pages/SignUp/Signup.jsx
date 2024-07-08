@@ -1,9 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Signup.css'
 import { FcGoogle } from "react-icons/fc";
 import { Link } from 'react-router-dom';
+import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 
 const Signup = () => {
+    const [showPassword, setShowPassword] = useState(false);
+    const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+
+    const togglePasswordVisibility = () => {
+        setShowPassword(!showPassword);
+    };
+
+    const toggleConfirmPasswordVisibility = () => {
+        setShowConfirmPassword(!showConfirmPassword);
+    };
     return (
         <section className="signup-page">
             <div className="signup-box">
@@ -20,8 +31,32 @@ const Signup = () => {
                     <form>
                         <h1>Signup</h1>
                         <input type="email" placeholder="Email" required/>
-                        <input type="password" placeholder="Create Password" required/>
-                        <input type="password" placeholder="Confirm Password" required/>
+                        <div className="password-container">
+                            <input
+                                type={showPassword ? "text" : "password"}
+                                placeholder="Create password"
+                                required
+                            />
+                            <span
+                                className="password-toggle-icon"
+                                onClick={togglePasswordVisibility}
+                            >
+                                {showPassword ? <AiFillEyeInvisible /> : <AiFillEye />}
+                            </span>
+                        </div>
+                        <div className="password-container">
+                            <input
+                                type={showConfirmPassword ? "text" : "password"}
+                                placeholder="Confirm password"
+                                required
+                            />
+                            <span
+                                className="password-toggle-icon"
+                                onClick={toggleConfirmPasswordVisibility}
+                            >
+                                {showConfirmPassword ? <AiFillEyeInvisible /> : <AiFillEye />}
+                            </span>
+                        </div>
                         <button className="signup-btn" type="submit">
                             Signup
                         </button>

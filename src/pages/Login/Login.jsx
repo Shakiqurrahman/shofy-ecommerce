@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Login.css";
 import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
+import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 
 
 const Login = () => {
+    const [showPassword, setShowPassword] = useState(false);
+
+    const togglePasswordVisibility = () => {
+        setShowPassword(!showPassword);
+    };
     return (
         <section className="login-page">
             <div className="login-box">
@@ -12,7 +18,19 @@ const Login = () => {
                     <form>
                         <h1>Login</h1>
                         <input type="email" placeholder="Email" required/>
-                        <input type="password" placeholder="Password" required/>
+                        <div className="password-container">
+                            <input
+                                type={showPassword ? "text" : "password"}
+                                placeholder="Password"
+                                required
+                            />
+                            <span
+                                className="password-toggle-icon"
+                                onClick={togglePasswordVisibility}
+                            >
+                                {showPassword ? <AiFillEyeInvisible /> : <AiFillEye />}
+                            </span>
+                        </div>
                         <button className="login-btn" type="submit">
                             Login
                         </button>
