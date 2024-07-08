@@ -20,7 +20,8 @@ const Signup = () => {
                     <form>
                         <h1>Signup</h1>
                         <input type="email" placeholder="Email" required/>
-                        <input type="password" placeholder="Password" required/>
+                        <input type="password" placeholder="Create Password" required/>
+                        <input type="password" placeholder="Confirm Password" required/>
                         <button className="signup-btn" type="submit">
                             Signup
                         </button>
