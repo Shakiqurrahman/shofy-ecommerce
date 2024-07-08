@@ -1,6 +1,7 @@
 import React from "react";
 import "./Login.css";
 import { FcGoogle } from "react-icons/fc";
+import { Link } from "react-router-dom";
 
 
 const Login = () => {
@@ -15,6 +16,7 @@ const Login = () => {
                         <button className="login-btn" type="submit">
                             Login
                         </button>
+                        <p>Don't have an account? <Link to="/signup">Signup</Link></p>
                     </form>
                     <div className="separator">
                         <div className="line"></div>
@@ -34,7 +36,7 @@ const Login = () => {
                         enjoyable time away.
                     </p>
                     <div>
-                        No account yet? <a href="/signup">Sign up</a>
+                        No account yet? <Link to="/signup">Sign up</Link>
                     </div>
                 </div>
             </div>

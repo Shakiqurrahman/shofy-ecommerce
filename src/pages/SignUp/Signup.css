@@ -1,34 +1,34 @@
-.login-page {
+.signup-page {
     padding: 80px 7.5rem;
     background: #f0f0f0;
 }
 
-.login-page .login-box {
+.signup-page .signup-box {
     max-width: 1200px;
     display: flex;
     margin: 0 auto;
 }
 
-.login-page .login-box .login-form {
+.signup-page .signup-box .signup-form {
     width: 100%;
     padding: 80px 40px;
     background-color: white;
-    border-radius: 30px 0 0 30px;
+    border-radius: 0 30px 30px 0;
 }
 
-.login-page .login-box .login-form form {
+.signup-page .signup-box .signup-form form {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.login-page .login-form h1 {
+.signup-page .signup-form h1 {
     text-align: center;
     margin-bottom: 30px;
 }
 
-.login-page .login-form input {
+.signup-page .signup-form input {
     width: 100%;
     padding: 15px 20px;
     max-width: 400px;
@@ -39,12 +39,12 @@
     font-size: 15px;
 }
 
-.login-page .login-form input:focus {
+.signup-page .signup-form input:focus {
     border-color: #0989ff;
     transition: .3s linear ;
 }
 
-.login-page .login-form .login-btn {
+.signup-page .signup-form .signup-btn {
     width: 100%;
     padding: 15px 20px;
     max-width: 400px;
@@ -58,30 +58,30 @@
     /* margin-bottom: 20px; */
 }
 
-.login-page .login-form .login-btn:hover {
+.signup-page .signup-form .signup-btn:hover {
     background-color: white;
     color: #0989ff;
     border: 1px solid #0989ff;
     transition: 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
-.login-page .login-form p {
+.signup-page .signup-form p {
     margin-top: 10px;
     display: none;
 }
 
-.login-page .login-form p a{
+.signup-page .signup-form p a{
     color: #0989ff;
 }
 
-.login-page .login-form p a:hover {
+.signup-page .signup-form p a:hover {
     text-decoration: underline;
     transition: .3s linear;
 }
 
-.login-page .login-box .right-side {
+.signup-page .signup-box .right-side {
     width: 100%;
-    border-radius: 0 30px 30px 0;
+    border-radius: 30px 0 0 30px;
     padding: 40px;
     background-color: #0989ff;
     color: white;
@@ -91,18 +91,18 @@
     align-items: center;
 }
 
-.login-page .login-box .right-side h2 {
+.signup-page .signup-box .right-side h2 {
     font-size: 22px;
     margin-bottom: 10px;
 }
 
-.login-page .login-box .right-side p {
+.signup-page .signup-box .right-side p {
     text-align: center;
     margin-bottom: 20px;
 }
 
 
-.login-page .login-box .right-side div {
+.signup-page .signup-box .right-side div {
     background: #2495ff;
     border: none;
     padding: 10px 25px;
@@ -110,37 +110,36 @@
     color: white;
 }
 
-.login-page .login-box .right-side div a {
+.signup-page .signup-box .right-side div a {
     color: white;
     text-decoration: underline;
 }
 
-.login-page .login-box .right-side div a:hover {
+.signup-page .signup-box .right-side div a:hover {
     color: #0b1bff;
     transition: 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 
 @media (width <= 1200px){
-    .login-page {
+    .signup-page {
         padding: 80px 16px;
     }
-    .login-page .login-box {
+    .signup-page .signup-box {
         width: auto;
     }
 }
 
 @media (width <= 720px){
-    .login-page .login-box .right-side{
+    .signup-page .signup-box .right-side{
         display: none;
     }
-    .login-page .login-box .login-form {
+    .signup-page .signup-box .signup-form {
         border-radius: 30px;
         padding: 40px 20px;
     }
-    .login-page .login-form p {
+    .signup-page .signup-form p {
         display: block;
     }
 }
-
 
