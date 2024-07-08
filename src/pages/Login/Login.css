@@ -1,11 +1,10 @@
 .login-page {
     padding: 80px 7.5rem;
-    min-height: 80vh;
     background: #f0f0f0;
 }
 
 .login-page .login-box {
-    width: 1200px;
+    max-width: 1200px;
     display: flex;
     margin: 0 auto;
 }
@@ -14,7 +13,7 @@
     width: 100%;
     padding: 80px 40px;
     background-color: white;
-    border-radius: 50px 0 0 0;
+    border-radius: 30px 0 0 30px;
 }
 
 .login-page .login-box .login-form form {
@@ -68,7 +67,7 @@
 
 .login-page .login-box .right-side {
     width: 100%;
-    border-radius: 0 50px 0 0;
+    border-radius: 0 30px 30px 0;
     padding: 40px;
     background-color: #0989ff;
     color: white;
@@ -151,6 +150,25 @@
 .google-btn span {
     font-size: 14px;
     font-weight: 500;
+}
+
+@media (width <= 1200px){
+    .login-page {
+        padding: 80px 16px;
+    }
+    .login-page .login-box {
+        width: auto;
+    }
+}
+
+@media (width <= 720px){
+    .login-page .login-box .right-side{
+        display: none;
+    }
+    .login-page .login-box .login-form {
+        border-radius: 30px;
+        padding: 40px 20px;
+    }
 }
 
 
