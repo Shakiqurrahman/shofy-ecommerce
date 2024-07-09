@@ -1,3 +1,10 @@
+/* some repeatable css */
+.flex-center {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
 /* css password visibility */
 .password-container {
   position: relative;

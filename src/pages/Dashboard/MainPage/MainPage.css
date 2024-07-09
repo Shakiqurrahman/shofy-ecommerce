@@ -1,10 +1,81 @@
 .dashboard {
     display: flex;
     gap: 10px;
-    background: #f3f3f3;
+    background: #f7f7f7;
     min-height: 100vh;
 }
 
 .rightSide {
+    width: 80%;
     padding: 30px;
+}
+
+.rightSide .d-header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.rightSide .d-header .admin-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.rightSide .d-header .admin-box img {
+    width: 60px;
+}
+
+.rightSide .d-header .add-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 25px;
+    border-radius: 25px;
+    font-size: 14px;
+    color: white;
+    outline: none;
+    border:none;
+    background: #0989ff;
+}
+
+.rightSide .d-header .add-btn:hover {
+    background: #0d7ae0;
+    transition: .3s linear;
+}
+
+.rightSide .cards-box {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 40px;
+    margin-top: 30px;
+}
+
+.rightSide .cards-box .card {
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 15px;
+}
+
+.rightSide .cards-box .card p {
+    color: #9e9ea0;
+    font-size: 18px;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.rightSide .cards-box .card h2 {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.rightSide .cards-box .card .flex-center {
+    font-size: 15px;
+    color: #0989ff;
+}
+.rightSide .cards-box .card .flex-center span {
+    margin-left: 2px;
+    color: #9e9ea0;
 }
