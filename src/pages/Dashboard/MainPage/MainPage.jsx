@@ -30,7 +30,7 @@ const MainPage = () => {
                     </div>
                     <Link to="/admin/dashboard/add-product" className="add-btn">
                         Add Product
-                        <FaCartPlus size={18} />
+                        <FaCartPlus />
                     </Link>
                 </div>
                 <div className="cards-box">

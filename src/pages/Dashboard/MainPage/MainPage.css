@@ -40,6 +40,9 @@
     border:none;
     background: #0989ff;
 }
+.rightSide .d-header .add-btn svg {
+    font-size: 18px;
+}
 
 .rightSide .d-header .add-btn:hover {
     background: #0d7ae0;
@@ -78,4 +81,48 @@
 .rightSide .cards-box .card .flex-center span {
     margin-left: 2px;
     color: #9e9ea0;
+}
+
+/* responsive */
+
+@media screen and (width <= 767px){
+    .rightSide {
+        padding: 16px;
+        margin-top: 80px;
+        width: 100%;
+    }
+
+    .rightSide .d-header .admin-box img {
+        width: 40px;
+    }
+
+    .rightSide .d-header .admin-box span{
+        font-size: 13px;
+    }
+
+    .rightSide .d-header .add-btn {
+        gap: 5px;
+        padding: 12px 18px;
+        border-radius: 25px;
+        font-size: 12px;
+        color: white;
+        outline: none;
+        border:none;
+        background: #0989ff;
+    }
+    .rightSide .d-header .add-btn svg {
+        font-size: 15px;
+    }
+
+    .rightSide .cards-box {
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 20px;
+    }
+
+    .rightSide .cards-box .card{
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }
