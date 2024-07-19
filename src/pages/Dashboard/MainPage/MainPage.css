@@ -28,6 +28,10 @@
     width: 60px;
 }
 
+.rightSide .d-header .admin-box .date {
+    margin-top: 3px;
+}
+
 .rightSide .d-header .add-btn {
     display: flex;
     align-items: center;

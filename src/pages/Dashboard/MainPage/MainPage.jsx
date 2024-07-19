@@ -25,7 +25,7 @@ const MainPage = () => {
                         />
                         <span>
                         <h4>Hi, Admin</h4>
-                        <p>{formattedDate}</p>
+                        <p className="date">{formattedDate}</p>
                         </span>
                     </div>
                     <Link to="/admin/dashboard/add-product" className="add-btn">
