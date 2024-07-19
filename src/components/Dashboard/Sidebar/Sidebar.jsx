@@ -1,11 +1,8 @@
 import React, { useState } from "react";
 import { FcTwoSmartphones } from "react-icons/fc";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { IoBagAddSharp } from "react-icons/io5";
+import { IoBagAddSharp, IoCloseSharp } from "react-icons/io5";
 import { MdDashboard, MdLogout } from "react-icons/md";
-import { IoCloseSharp } from "react-icons/io5";
-
-
 
 import { Link } from "react-router-dom";
 import styles from "./Sidebar.module.css";
@@ -19,19 +16,27 @@ const Header = () => {
         console.log(activeSidebar);
     };
     return (
-        <aside className={`${
-                        activeSidebar ? `${styles.showSidebar}` : `${styles.sidebar}`
-                    } ${styles.sidebar}`}>
+        <aside
+            className={`${
+                activeSidebar ? `${styles.showSidebar}` : `${styles.sidebar}`
+            } ${styles.sidebar}`}
+        >
             <div className={styles.between}>
                 <div
                     className={`${
                         activeSidebar ? styles.showLogo : styles.logo
                     }`}
                 >
-                    <img src={logo} alt="Logo" />
+                    <Link to='/admin/dashboard'>
+                        <img src={logo} alt="Logo" />
+                    </Link>
                 </div>
                 <div className={styles.hamburger} onClick={handleToggle}>
-                    {activeSidebar ? <IoCloseSharp size={28}/> : <GiHamburgerMenu />}
+                    {activeSidebar ? (
+                        <IoCloseSharp size={28} />
+                    ) : (
+                        <GiHamburgerMenu />
+                    )}
                 </div>
             </div>
             <nav
