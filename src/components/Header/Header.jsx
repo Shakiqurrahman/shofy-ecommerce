@@ -43,7 +43,7 @@ const Header = () => {
         </nav>
       </div>
       <div className="cart-icon">
-        <Link className="link" to="/">
+        <Link className="link" to="/admin/dashboard">
           <AiOutlineHeart />
         </Link>
         <Link className="link" to="/cart">

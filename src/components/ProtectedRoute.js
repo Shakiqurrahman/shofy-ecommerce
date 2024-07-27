@@ -1,7 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import {  useLocation, useNavigate } from 'react-router-dom';
+import { ShopContext } from '../contexts/shop-context';
 
-const ProtectedRoute = ({ element, isAuthenticated }) => {
+const ProtectedRoute = ({ element }) => {
+    const { isAuthenticated } = useContext(ShopContext);
     const location = useLocation()
     const navigate = useNavigate();
 

@@ -12,6 +12,7 @@ export const ShopContextProvider = (props) => {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [featuredProducts, setFeaturedProducts] = useState([]);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
   useEffect(() => {
     const fetchProducts = async () => {
       try {
@@ -78,6 +79,8 @@ export const ShopContextProvider = (props) => {
     setCart,
     addToCart,
     featuredProducts,
+    isAuthenticated,
+    setIsAuthenticated
   };
   return (
     <ShopContext.Provider value={contextValue}>

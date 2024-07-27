@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import { FcGoogle } from "react-icons/fc";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import axiosInstance from '../../axiosInstance.js'
 import "./Login.css";
+import { ShopContext } from "../../contexts/shop-context.jsx";
 
 const Login = () => {
     const [showPassword, setShowPassword] = useState(false);
@@ -11,6 +12,8 @@ const Login = () => {
     const [password, setPassword] = useState("");
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
+
+    const { setIsAuthenticated } = useContext(ShopContext);
 
     const navigate = useNavigate();
     const location = useLocation();
@@ -39,6 +42,7 @@ const Login = () => {
         try {
             const response = await axiosInstance.post('/auth/login', { email, password });
             console.log('Login successful:', response.data);
+            setIsAuthenticated(true);
             navigate(from, { replace: true });
         } catch (error) {
             // Handle different types of errors
