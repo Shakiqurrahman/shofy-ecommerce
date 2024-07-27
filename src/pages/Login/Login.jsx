@@ -43,7 +43,7 @@ const Login = () => {
                     </div>
                     <div className="google-btn">
                         <FcGoogle size={28} />
-                        <span>Login With Google</span>
+                        <span>Continue With Google</span>
                     </div>
                 </div>
                 <div className="right-side">

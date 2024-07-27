@@ -48,6 +48,7 @@
 
 .google-btn {
   max-width: 400px;
+  letter-spacing: .5px;
   margin: 0 auto;
   display: flex;
   align-items: center;

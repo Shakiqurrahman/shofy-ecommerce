@@ -2,7 +2,7 @@ import React from "react";
 import { FaCartPlus } from "react-icons/fa6";
 import Sidebar from "../../../components/Dashboard/Sidebar/Sidebar.jsx";
 import "./MainPage.css";
-import adminLogo from "/public/images/Admin.png";
+import adminLogo from "/images/Admin.png";
 import { RxArrowTopRight } from "react-icons/rx";
 import { Link } from "react-router-dom";
 

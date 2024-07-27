@@ -30,6 +30,7 @@ const Signup = () => {
                 <div className="signup-form">
                     <form>
                         <h1>Signup</h1>
+                        <input type="text" placeholder="Name" required/>
                         <input type="email" placeholder="Email" required/>
                         <div className="password-container">
                             <input
@@ -69,7 +70,7 @@ const Signup = () => {
                     </div>
                     <div className="google-btn">
                         <FcGoogle size={28} />
-                        <span>Login With Google</span>
+                        <span>Continue With Google</span>
                     </div>
                 </div>
                 
