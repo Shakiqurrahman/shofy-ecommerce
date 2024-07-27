@@ -64,16 +64,16 @@
     transition: 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
-.login-page .login-form p {
+.login-page .login-form .signup-text {
     margin-top: 10px;
     display: none;
 }
 
-.login-page .login-form p a{
+.login-page .login-form .signup-text a{
     color: #0989ff;
 }
 
-.login-page .login-form p a:hover {
+.login-page .login-form .signup-text a:hover {
     text-decoration: underline;
     transition: .3s linear;
 }

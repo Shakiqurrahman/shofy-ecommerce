@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
+import axiosInstance from '../../axiosInstance.js'
 import "./Login.css";
 
 const Login = () => {
@@ -9,39 +10,62 @@ const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [loading, setLoading] = useState(false);
+    const [error, setError] = useState("");
 
     const togglePasswordVisibility = () => {
         setShowPassword(!showPassword);
     };
 
+    const validateEmail = (email) => {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    };
+
     const handleLogin = async (e) => {
         e.preventDefault();
-        console.log("Form submitted with:", { email, password });
-
         setLoading(true);
-        try {
-            const response = await fetch('http://localhost:8101/api/auth/login', { // Replace with your API endpoint
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ email, password }),
-            });
-            const data = await response.json();
-            if (response.ok) {
-                // Handle successful login, e.g., redirect to a different page
-                console.log('Login successful:', data);
-            } else {
-                // Handle login failure
-                console.error('Login failed:', data.message);
-            }
-        } catch (error) {
-            console.error('Error during login:', error);
+        setError("");
+    
+        if (!validateEmail(email)) {
+            setError("Invalid email address");
+            setLoading(false);
+            return;
         }
-        setEmail("");
-        setPassword("");
+    
+        if (password.length < 6) {
+            setError("Password must be at least 6 characters long");
+            setLoading(false);
+            return;
+        }
+    
+        try {
+            const response = await axiosInstance.post('/auth/login', { email, password });
+            console.log('Login successful:', response.data);
+            // Handle successful login, e.g., redirect or update UI
+            // Example: Redirect to a dashboard page
+            // history.push('/dashboard');
+        } catch (error) {
+            // Handle different types of errors
+            if (error.response) {
+                // Server responded with a status other than 2xx
+                const status = error.response.status;
+                if (status === 401) {
+                    setError("Invalid email or password");
+                } else if (status === 400) {
+                    setError("Bad request. Please try again.");
+                } else {
+                    setError("An unexpected error occurred. Please try again later.");
+                }
+            } else if (error.request) {
+                setError("Network error. Please check your connection.");
+            } else {
+                setError("An error occurred. Please try again.");
+            }
+        }
         setLoading(false);
+        setEmail('');
+        setPassword('');
     };
+    
     return (
         <section className="login-page">
             <div className="login-box">
@@ -77,7 +101,10 @@ const Login = () => {
                         <button className="login-btn" type="submit">
                             {loading ? 'Loading...' : 'Login'}
                         </button>
-                        <p>
+                        {error && <p className="error">{error}</p>}
+                        
+                        
+                        <p className="signup-text">
                             Don't have an account?{" "}
                             <Link to="/signup">Signup</Link>
                         </p>

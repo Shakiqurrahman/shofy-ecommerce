@@ -23,6 +23,13 @@
   color: #848484;
 }
 
+.error {
+  color: red;
+  z-index: 2000;
+  display: block;
+  margin-top: 5px;
+}
+
 
 
 .separator {
