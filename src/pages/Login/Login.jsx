@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import { FcGoogle } from "react-icons/fc";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import axiosInstance from '../../axiosInstance.js'
 import "./Login.css";
 
@@ -11,6 +11,11 @@ const Login = () => {
     const [password, setPassword] = useState("");
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
+
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/";
+
 
     const togglePasswordVisibility = () => {
         setShowPassword(!showPassword);
@@ -34,9 +39,7 @@ const Login = () => {
         try {
             const response = await axiosInstance.post('/auth/login', { email, password });
             console.log('Login successful:', response.data);
-            // Handle successful login, e.g., redirect or update UI
-            // Example: Redirect to a dashboard page
-            // history.push('/dashboard');
+            navigate(from, { replace: true });
         } catch (error) {
             // Handle different types of errors
             if (error.response) {

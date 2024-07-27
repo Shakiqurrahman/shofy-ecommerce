@@ -14,6 +14,9 @@ import Contact from "./pages/Contact/Contact";
 import MainPage from "./pages/Dashboard/MainPage/MainPage";
 import Login from './pages/Login/Login.jsx'
 import Signup from "./pages/SignUp/Signup.jsx";
+import ProtectedRoute from './components/ProtectedRoute.js'
+
+const isAuthenticated = true;
 
 const router = createBrowserRouter([
   {
@@ -56,8 +59,8 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path : "/admin/dashboard",
-    element: <MainPage />
+    path: "/admin/dashboard",
+    element: <ProtectedRoute element={<MainPage />} isAuthenticated={isAuthenticated} />,
   },
   {
     path: '*',
