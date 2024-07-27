@@ -30,13 +30,7 @@ const Login = () => {
             setLoading(false);
             return;
         }
-    
-        if (password.length < 6) {
-            setError("Password must be at least 6 characters long");
-            setLoading(false);
-            return;
-        }
-    
+
         try {
             const response = await axiosInstance.post('/auth/login', { email, password });
             console.log('Login successful:', response.data);
@@ -46,12 +40,11 @@ const Login = () => {
         } catch (error) {
             // Handle different types of errors
             if (error.response) {
-                // Server responded with a status other than 2xx
                 const status = error.response.status;
                 if (status === 401) {
                     setError("Invalid email or password");
-                } else if (status === 400) {
-                    setError("Bad request. Please try again.");
+                } else if (status === 500) {
+                    setError("Network error. Please check your connection.");
                 } else {
                     setError("An unexpected error occurred. Please try again later.");
                 }

@@ -24,10 +24,11 @@
 }
 
 .error {
-  color: red;
+  color: rgba(255, 0, 0, 0.838);
   z-index: 2000;
   display: block;
-  margin-top: 5px;
+  margin-top: 10px;
+  font-size: 13px;
 }
 
 
