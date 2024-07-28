@@ -16,6 +16,8 @@ const Header = () => {
     setToggle(!toggle);
   }
 
+  const loggedIn = false
+
   return (
     <div className="header">
       <div className="logo">
@@ -50,9 +52,12 @@ const Header = () => {
           <FiShoppingCart />
         </Link>
         <span className="cart-qty">{cart.length}</span>
-        <Link to="/login">
+        {
+          loggedIn ? '' 
+          : <Link to="/login">
           <button className="login-btn">Login</button>
         </Link>
+        }
 
         {/* hamburger */}
         <div className="hamburger-menu" onClick={() => setToggle(!toggle)}>

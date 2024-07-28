@@ -16,6 +16,9 @@ import Login from "./pages/Login/Login.jsx";
 import Product from "./pages/Product/Product";
 import Signup from "./pages/SignUp/Signup.jsx";
 
+const isAuthenticated = !!document.cookie.includes('accessToken');
+console.log(isAuthenticated);
+
 
 const router = createBrowserRouter([
     {
